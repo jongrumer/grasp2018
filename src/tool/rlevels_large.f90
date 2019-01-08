@@ -248,7 +248,7 @@
       END IF
    1  FORMAT (' Energy levels for ...')
    2  FORMAT (' Rydberg constant is ',F14.5)
-   3  FORMAT (2I3,1X,A4,1x,A1,2X,F14.7,F12.2,F12.2,2X,A)
+   3  FORMAT (2I6,1X,A4,1x,A1,2X,F14.7,1x,F12.2,1x,F12.2,2X,A)
    5  FORMAT ('---------------------------------------------',&
               '---------------------------------------------')
    6  FORMAT ('------------------------------------------',   &
@@ -351,19 +351,19 @@
       ICount = 0
       IF (IOS .NE. 0) GO TO 1
       ICount = 1
-      READ (31,'(1X,I2,1X,A4,5X,A1,8X,F16.9)',IOSTAT = IOS)  &
+      READ (31,'(1X,I4,1X,A4,5X,A1,8X,F16.9)',IOSTAT = IOS)  &
         Lev_Pos(ICount),Lev_J(ICount),Lev_Par(ICount),       &
         RLev_ENER(ICount)
       IF (IOS .NE. 0) GO TO 1
 !
       READ (31,'(7X,F12.8,17X,A)') WEIGHTS,string_CSF(ICount)
 !
-    2 READ (31,'(1X,I2)',IOSTAT = IOS) ITEST
+    2 READ (31,'(1X,I4)',IOSTAT = IOS) ITEST
       IF (IOS .NE. 0) GO TO 1
       IF (ITEST .EQ. 0) GO TO 2
       BACKSPACE 31
       ICount = ICount + 1
-      READ (31,'(1X,I2,1X,A4,5X,A1,8X,F16.9)',IOSTAT = IOS) &
+      READ (31,'(1X,I4,1X,A4,5X,A1,8X,F16.9)',IOSTAT = IOS) &
         Lev_Pos(ICount),Lev_J(ICount),Lev_Par(ICount),      &
         RLev_ENER(ICount)
       IF (IOS .NE. 0) GO TO 1
