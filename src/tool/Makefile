@@ -26,6 +26,7 @@ EXE :        $(BIN)/rcsfsplit \
                 $(BIN)/rcsfblock  \
 		$(BIN)/rwfnmchfmcdf  \
                 $(BIN)/rlevels    \
+      $(BIN)/rlevels_large    \
                 $(BIN)/rtabtrans1  \
                 $(BIN)/rwfnplot \
 		$(BIN)/rtabtrans2\
@@ -43,7 +44,7 @@ EXE :        $(BIN)/rcsfsplit \
 OBJ : rasfsplit.o rcsfsplit.o rmixaccumulate.o rseqenergy.o \
       rseqhfs.o rseqtrans.o rtablevels.o rtabtransE1.o \
       rmixextract.o rcsfblock.o  rwfnmchfmcdf.o \
-      rlevels.o rtabtrans1.o format_mix.o rlevelsj.o \
+      rlevels.o rlevels_large.o rtabtrans1.o format_mix.o rlevelsj.o \
       rwfnrotate.o  \
       rwfnplot.o rtabtrans2.o rlevelseV.o rtabhfs.o wfnplot.o rwfnrelabel.o \    
 	rhfs_lsj.o rcsfmr.o\
@@ -87,6 +88,9 @@ $(BIN)/rwfnmchfmcdf: rwfnmchfmcdf.o
 
 $(BIN)/rlevels: rlevels.o
 	$(FC) -o $(BIN)/rlevels $(FC_LD)  rlevels.o  $(APP_LIBS)
+
+$(BIN)/rlevels_large: rlevels_large.o
+	$(FC) -o $(BIN)/rlevels_large $(FC_LD)  rlevels_large.o  $(APP_LIBS)
 
 $(BIN)/rtabtrans1: rtabtrans1.o
 	$(FC) -o $(BIN)/rtabtrans1 $(FC_LD)  rtabtrans1.o $(APP_LIBS) 
