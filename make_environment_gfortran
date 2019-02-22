@@ -28,4 +28,4 @@ export   FC_MPI="mpifort"                                      # MPI
 export   FC_MPIFLAGS="${FC_FLAGS}"                             # Parallel code compiler flags
 export   FC_MPILD=${FC_LD}                                     # Serial linker flags
 # -----------------------------------------------------------------------------------------------------------------
-export MPI_TMP="/home/per/tmp_mpi"                            # Location for temporary files
+export   MPI_TMP="${HOME}/tmp_mpi"                             # Location for temporary files
