@@ -1,0 +1,10 @@
+# GITIGNORE
+# 
+# bin and lib directories
+bin/
+lib/
+
+# binaries
+*.o
+*.mod
+*.a
