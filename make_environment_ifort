@@ -1,0 +1,31 @@
+#!/bin/bash
+# --------------------------------------------------------------------------------------
+# GRASP2K ENVIRONMENT FLAGS
+# --------------------------------------------------------------------------------------
+#
+# Define the following global variables according to your environment and
+# source this script or add these definitions to your terminal configuration 
+# file, eg. ~/.cshrc, ~/.bashrc or ~/.profile.
+#
+# Current version: Linux, gfortran gcc version 4.8.2
+#
+#
+# Assumes ifort compiler on the path
+# libraries invoked through a compiler option
+
+# -----------------------------------------------------------------------------------------------------------------
+# Set up main flags
+# -----------------------------------------------------------------------------------------------------------------
+export   FC=ifort                                              # Fortran compiler 
+export   FC_FLAGS="-O2 -save "                                 # Serial code compiler flags
+export   FC_LD="-mkl=sequential"                               # Serial linker flags
+export   GRASP="${PWD}"                                        # Location of the 2018 root directory
+export   LAPACK_LIBS="-llapack -lblas"                         # Lapack libraries
+# -----------------------------------------------------------------------------------------------------------------
+# Set up MPI related flags
+# -----------------------------------------------------------------------------------------------------------------
+export   FC_MPI="mpiifort"                                     # MPI
+export   FC_MPIFLAGS="${FC_FLAGS}"                             # Parallel code compiler flags
+export   FC_MPILD=${FC_LD}                                     # Serial linker flags
+# -----------------------------------------------------------------------------------------------------------------
+export   MPI_TMP="${HOME}/tmp_mpi"                             # Location for temporary files
