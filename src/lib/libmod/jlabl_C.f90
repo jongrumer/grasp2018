@@ -1,4 +1,4 @@
-      MODULE jlabl_C_large
+      MODULE jlabl_C
 !...Created by Pacific-Sierra Research 77to90  4.3E  06:16:25   2/14/04  
 !...Modified by Charlotte Froese Fischer 
 !                     Gediminas Gaigalas  10/05/17
@@ -26,4 +26,4 @@
       DATA JLBP/ ' -  ', ' +  '/
 !
 
-      END MODULE jlabl_C_large
+      END MODULE jlabl_C
